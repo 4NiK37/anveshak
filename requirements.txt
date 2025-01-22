@@ -4,4 +4,3 @@ requests
 beautifulsoup4
 whois
 sublist3r
-subprocess
