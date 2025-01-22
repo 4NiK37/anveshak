@@ -209,6 +209,3 @@ def subs():
         domain = request.form['domain']
         subdomains = find_subdomains(domain)
     return render_template('subdomains.html', subdomains=subdomains)
-
-if __name__ == "__main__":
-    app.run(debug=True)
