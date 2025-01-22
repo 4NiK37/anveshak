@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>अन्वेषक - Whois-Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='whois.css') }}">
+    <style>
+         * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #444;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 3px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">अन्वेषक</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/crawler">Crawler</a></li>
+            <li><a href="/find_js">JS-Files</a></li>
+            <li><a href="/whois_func">Whois-Data</a></li>
+            <li><a href="/subs">Subdomains</a></li>
+            <li><a href="/technology">Technologies</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <center>
+    <div class="container">
+        <h1>Fetch Whois Data</h1>
+        <form method="POST">
+            <label for="url">Enter URL:</label>
+            <input type="text" id="url" name="url" placeholder="https://example.com" required>
+            <button type="submit">Get Whois Data</button>
+        </form>
+
+        <div class="fetchdata">
+            <!-- {{whois_data}} -->
+        {% if whois_data %}
+            <h2>WHOIS DATA :</h2>
+                {% for item in whois_data %}
+                    <li>{{ item }} : {{ whois_data[item] }}</li>
+                {% endfor %}
+        {% endif %}
+    </div>
+    </div>
+</center>
+<div class="name">@4NIK37</div>
+</body>
+</html>

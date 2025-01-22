@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='subdomains.css') }}">
+    <title>अन्वेषक - Subdomains</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">अन्वेषक</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/crawler">Crawler</a></li>
+            <li><a href="/find_js">JS-Files</a></li>
+            <li><a href="/whois_func">Whois-Data</a></li>
+            <li><a href="/subs">Subdomains</a></li>
+            <li><a href="/technology">Technologies</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+<CENter>
+    <div class="container">
+        <h1>Subdomain Finder</h1>
+        <form method="POST">
+            <input type="text" name="domain" placeholder="Enter Domain" required>
+            <button type="submit">Find Subdomains</button>
+        </form>
+        <!-- {{ subdomains }} -->
+
+        {% if subdomains %}
+            <h2>Found Subdomains:</h2>
+            <ul>
+                {% for subdomain in subdomains %}
+                    <a href="{{ subdomain }}" style="color:black"><li>{{ subdomain }}</li></a>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</CENter>
+
+<div class="name">@4NIK37</div>
+</body>
+</html>

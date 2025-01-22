@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>अन्वेषक - About Us</title>
+    <style>
+        p{
+            width: 80%;
+            margin-top: 15vh;
+            /* margin: auto; */
+            color: white;
+        }
+
+        h3{
+            color: white;
+        }
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #444;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 3px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+h3{
+    margin: 10px;
+}
+
+.name{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 10px;
+    color: white;
+    right: 10px;
+    bottom: 10px;
+    position: fixed;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">अन्वेषक</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/crawler">Crawler</a></li>
+            <li><a href="/find_js">JS-Files</a></li>
+            <li><a href="/whois_func">Whois-Data</a></li>
+            <li><a href="/subs">Subdomains</a></li>
+            <li><a href="/technology">Technologies</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <center>
+    <h3>About Us</h3>
+    <p>Welcome to अन्वेषक, your comprehensive solution for web analysis and security assessment. In an increasingly digital world, understanding the intricacies of a website is crucial for developers, security professionals, and businesses alike. Our platform is designed to empower you with the tools you need to explore, analyze, and secure your web presence. <br> <br> Our mission is to provide users with powerful, user-friendly tools that enhance their understanding of web security and performance. Whether you are a developer looking to optimize your site, a security professional conducting a thorough assessment, or a business owner wanting to protect your online assets, अन्वेषक is here to help.</p>
+
+<br><br><br>
+    <h3>Services Provided by अन्वेषक</h3>
+    <ul style="color: white;">
+        <li>Crawling</li>
+        <li>Find out JS-Files</li>
+        <li>Subdomain Enumaration</li>
+        <li>Find out Technologies</li>
+        <li>Get Whois-Data</li>
+    </ul>
+
+    <br><br><div class="name">@4NIK37</div>
+</center>
+</body>
+</html>

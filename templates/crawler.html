@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>अन्वेषक - Crawler</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .name{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 10px;
+    color: white;
+    right: 10px;
+    bottom: 10px;
+    position: fixed;
+}
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #fff;
+        }
+        .form-control {
+            margin-bottom: 20px;
+        }
+        .link-list {
+            margin-top: 20px;
+        }
+        .link-list a {
+            color: #333;
+            text-decoration: none;
+        }
+        .link-list a:hover {
+            text-decoration: underline;
+        }
+        .text-center{
+            font-weight: bolder;
+        }
+        
+        
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #444;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 3px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">अन्वेषक</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/crawler">Crawler</a></li>
+            <li><a href="/find_js">JS-Files</a></li>
+            <li><a href="/whois_func">Whois-Data</a></li>
+            <li><a href="/subs">Subdomains</a></li>
+            <li><a href="/technology">Technologies</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="text-center">अन्वेषक</h1>
+        <form method="POST" class="text-center">
+            <div class="form-group">
+                <label for="url">URL:</label>
+                <input type="text" class="form-control" id="url" name="url" placeholder="Enter URL" required>
+            </div>
+            <div class="form-group">
+                <label for="depth">Depth:</label>
+                <input type="number" class="form-control" id="depth" name="depth" min="0" placeholder="Enter Depth" required>
+            </div>
+            <button type="submit" class="button">Crawl</button>
+            <!-- <button></button> -->
+        </form>
+        <h2 class="text-center link-list">Crawled Links:</h2>
+
+        {% if links %}
+            <ul>
+                {% for link in links %}
+                    <a href="{{link}}" style="color:white"><li>{{ link }}</li></a>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <div class="name">@4NIK37</div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
